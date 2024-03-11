@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="checkbox" id="input">
+    <div id="setting">
+        <h3>Setting <label for="input"><div class="close"></div></label></h3>
+        <hr>
+        <h6>Time (minutes)</h6>
+        <div class="taketime">
+            <div>
+                <h1>pomodoro</h1>
+                <input type="number" class="numTime" id="mainTime">
+            </div>
+            <div>
+                <h1>short break</h1>
+                <input type="number" class="numTime" id="short">
+            </div>
+            <div>
+                <h1>long break</h1>
+                <input type="number" class="numTime" id="long">
+            </div>
+        </div>
+        <hr>
+        <div class="selectfont">
+            <h6>Font</h6>
+            <div>
+                <div class="font">Aa</div>
+                <div class="font">Aa</div>
+                <div class="font">Aa</div>
+            </div>
+            
+        </div>
+        <div id="apply">Apply</div>
+    </div>
+    <div id="main">
+        <div class="title">pomodoro</div>
+        <div class="option-container">
+            <div id="back">
+                <div id="active"></div>
+            </div>
+            <div id="front">
+                <div class="options">pomodoro</div>
+                <div class="options">short break</div>
+                <div class="options">long break</div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="watch" class="part">
+                <div class="center">
+                    <svg width="270" height="270">
+                        <circle id="cir" cx="135" cy="135" r="130" />
+                    </svg>
+                    <span id="time">12:15</span>
+                    <div id="move">start</div>
+                </div>
+                
+            </div>
+        </div>
+        <label for="input"><div class="setting"></div></label>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

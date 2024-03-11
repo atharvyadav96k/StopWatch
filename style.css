@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,
+body {
+    height: 100vh;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+:root {
+    --main-background: #1e2140;
+    --option-background: #151932;
+    --setting-backgorund: #6d718f;
+    --orange-color: #ff5b5b;
+    --font: 'Bebas Neue', sans-serif;
+}
+#input{
+    display: none;
+}
+.numTime{
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 5px;
+}
+#main {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Smooch Sans', sans-serif;;
+    background-color: var(--main-background);
+}
+
+.title {
+    text-align: center;
+    color: var(--setting-backgorund);
+    font-size: 40px;
+    padding-top: 40px;
+}
+
+.option-container {
+    margin: auto;
+    margin-top: 20px;
+    width: 350px;
+    height: 60px;
+    background-color: var(--option-background);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#back,
+#front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+#front {
+    z-index: 10;
+}
+
+#back {
+    z-index: 0;
+}
+
+#front .options {
+    margin-left: 5px;
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--setting-backgorund);
+    cursor: pointer;
+}
+
+.options:first-child {
+    color: var(--option-background);
+}
+#active {
+    margin-left: 5px;
+    width: 110px;
+    height: 50px;
+    background-color: var(--orange-color);
+    border-radius: 25px;
+}
+
+.container {
+    margin: auto;
+    width: 500px;
+    height: 447px;
+    max-width: 500px;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+#watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    transform: translate(0px, -20px);
+    background: radial-gradient(circle, #292d52, transparent 100%);
+}
+#watch::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, var(--option-background) 20%, #292d52);
+    border-radius: 50%;
+}
+
+#watch::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #131734, transparent 70%);
+    border-radius: 50%;
+    transform: translate(10px, 10px);
+}
+
+.center {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: var(--option-background);
+    border-radius: 50%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cir {
+    fill: transparent;
+    stroke: var(--orange-color);
+    stroke-width: 10px;
+    stroke-dasharray: 815;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    cursor: pointer;
+}
+#time{
+    position: absolute;
+    font-size: 80px;
+    color: #a0a5cb;
+    filter: drop-shadow(0px 0px 2px white);
+}
+#move{
+    /* background-color: red; */
+    width: 75px;
+    height: 30px;
+    font-size: 30px;
+    letter-spacing: 4px;
+    position: absolute;
+    transform: translateY(70px);
+    color: #a0a5cb;
+    cursor: pointer;
+}
+#setting{
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    position: absolute;
+    z-index: 99;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1f2134;
+    display: none;
+}
+#setting hr{
+    margin-top: 20px;
+    width: 100%;
+    height: 0.1em;
+}
+#setting h3{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#setting h6{
+    margin-top: 12px;
+    letter-spacing: 4px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.close{
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    background-image: url(img/close.png);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+#input:checked ~ #setting{
+    display: block;
+}
+
+.setting{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background-image: url(img/gear.png);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 2s ease-in;
+}
+
+.taketime{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.taketime div{
+    display: flex;
+    flex-direction: column;
+}
+.taketime div h1{
+    font-size: 13px;
+    color: #a0a5cb;
+    margin-bottom: 5px;
+}
+.selectfont{
+   /* height: ; */
+}
+.selectfont h6{
+    float: left;
+    padding-top: 10px;
+}
+.selectfont .font{
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-color: #a0a5cb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #131734;
+}
+.font:nth-child(1){
+    font-family: 'Smooch Sans', sans-serif;
+    background-color: #131734;
+    color: #a0a5cb;
+}
+.font:nth-child(2){
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.font:nth-child(3){
+    font-family: 'Vina Sans', sans-serif;
+}
+#apply{
+    width: 150px;
+    height: 50px;
+    background-color: #ff5b5b;
+    margin: auto;
+    margin-top: 90px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
+    scale: 1;
+    transition: scale 0.4s ease-in-out;
+}
+#apply:active{
+    scale: 0.9;
+    transition: scale 0.4s ease-in-out;
+}
